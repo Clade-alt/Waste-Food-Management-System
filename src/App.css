@@ -1,0 +1,6 @@
+/*Home*/
+#home{
+    background: rgb(166, 103, 22);
+    background: linear-gradient(90deg, rgb(222, 138, 30) 40%, rgba(224, 180, 33, 0.8));
+    min-height: 800px;
+}
