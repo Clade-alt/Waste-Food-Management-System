@@ -1,4 +1,8 @@
-import React from 'react'
+import React from 'react';
+import AboutUs from './AboutUs';
+import Services from './Services';
+import ContactUs from './ContactUs'
+import { NavLink } from 'react-router-dom';
 
 const Home = () => {
   return (
@@ -10,12 +14,13 @@ const Home = () => {
               <h1 className="display-4 fw-bolder mb-4 text-center text-white"> Let's Reduce Food Wastage</h1>
               <p className="lead text-center fs-4 mb-5 text-white">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatibus, quod illum non illo ad nostrum cumque quidem eum deleniti minima.</p>
               <div className="buttons d-flex justify-content-center">
-                <div className="button btn btn-outline-light me-4 rounded-pill px-5 py-3 fs-5">Explore</div>
+                <NavLink to="/contactus" className="button btn btn-outline-light me-4 rounded-pill px-5 py-3 fs-5">Explore</NavLink>
               </div>
             </div>
           </div>
         </div>
       </section>
+      
     </div>
   )
 }
