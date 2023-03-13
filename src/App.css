@@ -4,3 +4,12 @@
     background: linear-gradient(90deg, rgb(222, 138, 30) 40%, rgba(224, 180, 33, 0.8));
     min-height: 800px;
 }
+
+/* Cards */
+.card{
+    transition: all 0.5 ease;
+}
+.card:hover{
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
