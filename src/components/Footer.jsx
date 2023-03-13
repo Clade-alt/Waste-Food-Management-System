@@ -8,7 +8,9 @@ const Footer = () => {
                     <footer className="py-5">
                         <div className="row">
                             <div className="col-3">
-                                <h4>FINE ART</h4>
+                                <h4>WASTE</h4>
+                                <h4>FOOD</h4>
+                                <h4>MANAGEMENT</h4>
                             </div>
 
                             <div className="col-2">
@@ -17,11 +19,6 @@ const Footer = () => {
                                     <li className="nav-item mb-2">
                                         <a to="#" className="nav-link p-0 text-white">
                                             Home
-                                        </a>
-                                    </li>
-                                    <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
-                                            Features
                                         </a>
                                     </li>
                                     <li className="nav-item mb-2">
@@ -42,31 +39,10 @@ const Footer = () => {
                                 </ul>
                             </div>
                             <div className="col-2">
-                                <h5>SECTION</h5>
+                                <h5></h5>
                                 <ul className="nav flex-column">
                                     <li className="nav-item mb-2">
                                         <a to="#" className="nav-link p-0 text-white">
-                                            Home
-                                        </a>
-                                    </li>
-                                    <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
-                                            Features
-                                        </a>
-                                    </li>
-                                    <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
-                                            Pricing
-                                        </a>
-                                    </li>
-                                    <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
-                                            FAQs
-                                        </a>
-                                    </li>
-                                    <li className="nav-item mb-2">
-                                        <a to="#" className="nav-link p-0 text-white">
-                                            About
                                         </a>
                                     </li>
                                 </ul>
