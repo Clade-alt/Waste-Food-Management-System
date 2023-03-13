@@ -27,9 +27,9 @@ const Navbar = () => {
           <a class="nav-link" href="#"> Contact Us </a>
         </li>
       </ul>
-      <button className="btn btn-outline-primary ms-auto px-4 rounded-pill">
+      <button className="btn btn-secondary ms-auto px-4 rounded-pill">
         <i className = "fa fa-sign-in me-2"></i>Login</button>
-      <button className="btn btn-outline-primary ms-2 px-4 rounded-pill">
+      <button className="btn btn-outline-secondary ms-2 px-4 rounded-pill">
       <i className = "fa fa-user-plus me-2"></i>Sign Up</button>
     </div>
   </div>
