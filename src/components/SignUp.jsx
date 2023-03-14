@@ -10,7 +10,7 @@ const SignUp = () => {
                         <h1 className="display-4 fw-bolder">Hello, There</h1>
                         <p className="lead text-center">Enter Your Details To Sign Up</p>
                         <h5 className="mb-4">OR</h5>
-                        <NavLink to="/login" className="btn btn-outline-light rounded-pill pb-2 w-50">Sign up</NavLink>
+                        <NavLink to="/login" className="btn btn-outline-light rounded-pill pb-2 w-50">Login</NavLink>
                     </div>
                     <div className="col-md-6 p-5">
                         <h4 className="mb-5 text-center">Create an account to explore all the services and help to reduce the food wastage</h4>
