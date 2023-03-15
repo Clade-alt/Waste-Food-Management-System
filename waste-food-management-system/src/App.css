@@ -1,0 +1,45 @@
+/*Home*/
+#home{
+    background: rgb(166, 103, 22);
+    background: linear-gradient(90deg, rgb(222, 138, 30) 40%, rgba(224, 180, 33, 0.8) 100%);
+    min-height: 1000px;
+}
+
+/* Cards */
+.card{
+    transition: all 0.5 ease;
+}
+.card:hover{
+    cursor: pointer;
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15);
+}
+
+/* About Us*/
+#aboutus{
+    min-height: 700px;
+}
+
+/* Services */
+#service{
+    min-height: 1000px;
+}
+
+/* Contact Us*/
+#contactus{
+    min-height: 800px;
+}
+
+/* Form */
+
+.form{
+    background: rgb(166, 103, 22);
+    background: linear-gradient(90deg, rgb(222, 138, 30) 30%, rgba(224, 180, 33, 0.8) 100%);
+    min-height: 400px;
+}
+
+/* Footer */
+.footer{
+    background: rgb(166, 103, 22);
+    background: linear-gradient(90deg, rgb(222, 138, 30) 40%, rgba(224, 180, 33, 0.8));
+    min-height: 300px;
+}
