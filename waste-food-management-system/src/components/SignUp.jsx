@@ -42,7 +42,7 @@ const SignUp = () => {
             })
 
             if(res.status === 400 || !res){
-                window.alert("Already Used Details")
+                window.alert("Details Already Used Or The Fields Are Empty")
             }else{
                 window.alert("Sign Up Complete");
                 navigate('/login');
