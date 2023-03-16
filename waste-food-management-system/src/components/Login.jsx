@@ -1,7 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 
 const Login = () => {
+
+    const [user, setUser] =useState({
+        email : '',
+        password : ''
+    });
+
+    // Handle Input
+    const handleChange = (event) =>{
+        let name = event.target.name
+        let value = event.target.value
+
+        setUser({...user, [name]:value})
+    }
+
+    // Handle Login
+    const handleSubmit = async (event)=>{
+        event.preventDefault();
+        const {email,password} = user;
+        try{
+            const res = await fetch('/login', {
+                method : "POST",
+                headers : {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify({
+                    email, password
+                })
+            });
+
+            if(res.status === 400 || !res){
+                window.alert("Invalid Credentials")
+            }else{
+                window.alert("Login Successful")
+                window.location.reload();
+            }
+        } catch(error){
+            console.log(error);
+        }
+    }
+
     return (
         <div>
             <div className="container shadow my-5">
@@ -14,15 +54,15 @@ const Login = () => {
                     </div>
                     <div className="col-md-6 p-5">
                         <h4 className="display-6 mb-5 text-center">Please Login Below To Explore All Our Services</h4>
-                        <form>
+                        <form onSubmit={handleSubmit}>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" value={user.email} onChange={handleChange}/>
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" />
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" value={user.password} onChange={handleChange}/>
                             </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" />

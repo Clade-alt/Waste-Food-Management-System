@@ -1,10 +1,60 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 
 const SignUp = () => {
-  return (
-    <div>
-        <div className="container shadow my-5">
+
+    const navigate = useNavigate();
+
+    const [user, setuser] = useState({
+        fullname : "",
+        email : "",
+        password : "",
+        address : "",
+        contactnum : ""
+    });
+
+    // Handle Inputs
+    const handleInput = (event) =>{
+        let name = event.target.name;
+        let value = event.target.value;
+
+        setuser({...user, [name]:value});
+    }
+
+    // Handle Submit
+    const handleSubmit = async (event)=>{
+        event.preventDefault();
+        // Objecet Destructuring
+        // Store Object data into variables
+        const{fullname, email, password, address, contactnum} = user;
+        try{
+            // It is submitted on port 3000 by default
+            // 
+            const res = await fetch('/signup', {
+                method : "POST",
+                headers : {
+                    "Content-Type" : "application/json"
+                },
+                body : JSON.stringify({
+                    fullname, email, password, address, contactnum
+                })
+            })
+
+            if(res.status === 400 || !res){
+                window.alert("Already Used Details")
+            }else{
+                window.alert("Sign Up Complete");
+                navigate('/login');
+            }
+        } catch(error){
+            console.log(error);
+        }
+    }
+
+    return (
+        <div>
+            <div className="container shadow my-5">
                 <div className="row justify-content-end">
                     <div className="col-md-5 d-flex flex-column align-items-center text-white justify-content-center form order-2 ">
                         <h1 className="display-4 fw-bolder">Hello, There</h1>
@@ -14,27 +64,27 @@ const SignUp = () => {
                     </div>
                     <div className="col-md-6 p-5">
                         <h4 className="mb-5 text-center">Create an account to explore all the services and help to reduce the food wastage</h4>
-                        <form>
+                        <form onSubmit={handleSubmit} method="POST">
                             <div class="mb-3">
                                 <label for="fullname" class="form-label">Full Name</label>
-                                <input type="text" class="form-control" id="name" />
+                                <input type="text" class="form-control" id="fullname" name="fullname" value={user.fullname} onChange={handleInput}/>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputEmail1" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
+                                <label for="email" class="form-label">Email address</label>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" value={user.email} onChange={handleInput}/>
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                             </div>
                             <div class="mb-3">
-                                <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="exampleInputPassword1" />
+                                <label for="password" class="form-label">Password</label>
+                                <input type="password" class="form-control" id="password" name="password" value={user.password} onChange={handleInput}/>
                             </div>
                             <div class="mb-3">
                                 <label for="address" class="form-label">Address</label>
-                                <input type="text" class="form-control" id="address" />
+                                <input type="text" class="form-control" id="address" name="address" value={user.address} onChange={handleInput}/>
                             </div>
                             <div class="mb-3">
                                 <label for="contactnum" class="form-label">Contact Number</label>
-                                <input type="text" class="form-control" id="contactnum" />
+                                <input type="text" class="form-control" id="contactnum" name="contactnum" value={user.contactnum} onChange={handleInput}/>
                             </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" />
@@ -45,8 +95,8 @@ const SignUp = () => {
                     </div>
                 </div>
             </div>
-    </div>
-  )
+        </div>
+    )
 }
 
 export default SignUp;
