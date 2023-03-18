@@ -14,6 +14,7 @@ const port = process.env.PORT;
 
 // Require Model
 const Users = require('./models/userSchema');
+const Message = require('./models/msgSchema');
 
 //These methods are used to get data and cookies from frontend
 app.use(express.json());
@@ -86,6 +87,31 @@ app.post('/login', async (req, res)=>{
         res.status(400).send(error);
     }
 })
+
+// Message
+app.post('/message', async (req, res)=>{
+    try{
+        //Get body or data
+        const name = req.body.name;
+        const email = req.body.email;
+        const message = req.body.message;
+
+        const sendMsg = new Message({
+            name : name,
+            email : email,
+            message : message
+        });
+
+        const created = await sendMsg.save();
+        console.log(created);
+        res.status(200).send("Message Sent");
+        
+    } catch(error){
+        res.status(400).send(error)
+    }
+})
+
+// Logout Page
 
 // Run Server
 app.listen(port, ()=>{

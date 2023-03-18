@@ -40,7 +40,7 @@ const SignUp = () => {
                     fullname, email, password, address, contactnum
                 })
             })
-
+            console.log(res.status)
             if(res.status === 400 || !res){
                 window.alert("Details Already Used Or The Fields Are Empty")
             }else{
