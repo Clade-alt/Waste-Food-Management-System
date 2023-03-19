@@ -9,6 +9,7 @@ import Footer from './components/Footer';
 import { Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
+import Roles from './components/Roles';
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/contactus" element={<ContactUs/>}/>
         <Route exact path="/login" element={<Login/>}/>
         <Route exact path="/signup" element={<SignUp/>}/>
+        <Route exact path="/roles" element={<Roles/>}/>
       </Routes>
       <Footer/>
     </>
