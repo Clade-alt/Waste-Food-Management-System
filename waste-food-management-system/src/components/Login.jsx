@@ -1,7 +1,10 @@
 import React, { useState } from 'react'
-import { NavLink } from 'react-router-dom'
+import { Navigate, NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+
+    const navigate = useNavigate();
 
     const [user, setUser] =useState({
         email : '',
@@ -35,7 +38,9 @@ const Login = () => {
                 window.alert("Invalid Credentials")
             }else{
                 window.alert("Login Successful")
+                navigate('/');
                 window.location.reload();
+                
             }
         } catch(error){
             console.log(error);
