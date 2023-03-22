@@ -15,7 +15,10 @@ const port = process.env.PORT;
 // Require Model
 const Users = require('./models/userSchema');
 const Message = require('./models/msgSchema');
-const authenticate = require('./middleware/authenticate')
+const Donation = require('./models/donationSchema');
+const FoodReq = require('./models/foodreqSchema');
+const IndustryP = require('./models/industrypSchema');
+const authenticate = require('./middleware/authenticate');
 
 //These methods are used to get data and cookies from frontend
 app.use(express.json());
@@ -112,6 +115,81 @@ app.post('/message', async (req, res)=>{
     }
 })
 
+// Food Donator
+app.post('/donations', async (req, res)=>{
+    try{
+        //Get body or data
+        const fooddetails = req.body.fooddetails;
+        const price = req.body.price;
+        const location = req.body.location;
+        const contact = req.body.location;
+
+        const sendDonation = new Donation({
+            fooddetails : fooddetails,
+            price : price,
+            location : location,
+            contact : contact
+        });
+
+        const created = await sendDonation.save();
+        console.log(created);
+        res.status(200).send("Donation Request Sent");
+        
+    } catch(error){
+        res.status(400).send(error)
+    }
+})
+
+// Food Requests
+app.post('/foodrequests', async (req, res)=>{
+    try{
+        //Get body or data
+        const fooddetails = req.body.fooddetails;
+        const price = req.body.price;
+        const location = req.body.location;
+        const contact = req.body.contact;
+
+        const sendFoodReq = new FoodReq({
+            fooddetails : fooddetails,
+            price : price,
+            location : location,
+            contact : contact
+        });
+
+        const created = await sendFoodReq.save();
+        console.log(created);
+        res.status(200).send("Donation Request Sent");
+        
+    } catch(error){
+        res.status(400).send(error)
+    }
+})
+
+// Industry Purchase
+app.post('/industryp', async (req, res)=>{
+    try{
+        //Get body or data
+        const fooddetails = req.body.fooddetails;
+        const companyd = req.body.companyd;
+        const location = req.body.location;
+        const contact = req.body.contact;
+
+        const sendIndustryP = new IndustryP({
+            fooddetails : fooddetails,
+            companyd : companyd,
+            location : location,
+            contact : contact
+        });
+
+        const created = await sendIndustryP.save();
+        console.log(created);
+        res.status(200).send("Donation Request Sent");
+        
+    } catch(error){
+        res.status(400).send(error)
+    }
+})
+
 // Logout Page
 app.get('/logout', (req, res)=>{
     res.clearCookie("jwt", {path : '/'})
@@ -127,6 +205,3 @@ app.get('/auth', authenticate, (req, res)=>{
 app.listen(port, ()=>{
     console.log("Server is Listening")
 })
-
-
-// 

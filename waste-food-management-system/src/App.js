@@ -13,12 +13,15 @@ import Roles from './components/Roles';
 import Logout from './components/Logout';
 import ProtectedRoute from './ProtectedRoute';
 import { useEffect } from 'react';
+import FoodDS from './components/FoodDS';
+import FoodRequests from './components/FoodRequests';
+import IndustryP from './components/IndustryP';
 
 function App() {
 
   // Check if the user is logged in
   const [auth, setauth] = useState(false);
-  const [auth1, setauth1] = useState(false);
+  const [auth1, setauth1] = useState(true);
 
   const isLoggedIn = async () => {
     try {
@@ -52,7 +55,7 @@ function App() {
 
   return (
     <>
-      <Navbar auth={auth1}/>
+      <Navbar auth={auth1} />
       <Routes>
         <Route exact path="/" element={<Home />} />
         <Route exact path="/aboutus" element={<AboutUs />} />
@@ -63,6 +66,9 @@ function App() {
           <Route exact path="/signup" element={<SignUp />} auth={auth1} />
           <Route exact path="/roles" element={<Roles />} auth={auth} />
           <Route exact path="/logout" element={<Logout />} auth={auth} />
+          <Route exact path="/foodds" element={<FoodDS />} auth={auth} />
+          <Route exact path="/foodrequests" element={<FoodRequests />} auth={auth} />
+          <Route exact path="/industryp" element={<IndustryP />} auth={auth} />
         </Route>
       </Routes>
       <Footer />
