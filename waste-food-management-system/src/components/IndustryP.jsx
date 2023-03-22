@@ -93,7 +93,7 @@ const IndustryP = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" className="btn btn-outline-warning rounded-pill px-4">Send Message <i className="fa fa-paper-plane ms-2"></i></button>
+                                <button type="submit" className="btn btn-outline-warning rounded-pill px-4">Send Request <i className="fa fa-paper-plane ms-2"></i></button>
                             </form>
                         </div>
                     </div>

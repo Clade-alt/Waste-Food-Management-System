@@ -37,9 +37,9 @@ const FoodRequests = () => {
 
             console.log(res.status)
             if (res.status === 400 || !res) {
-                window.alert("Donation Request Not Sent. Try Again")
+                window.alert("Food Request Not Sent. Try Again")
             } else {
-                window.alert("Donation Request Sent");
+                window.alert("Food Request Sent");
                 setFoodReq({
                     fooddetails: "",
                     price: "",
@@ -93,7 +93,7 @@ const FoodRequests = () => {
                                         </div>
                                     </div>
                                 </div>
-                                <button type="submit" className="btn btn-outline-warning rounded-pill px-4">Send Message <i className="fa fa-paper-plane ms-2"></i></button>
+                                <button type="submit" className="btn btn-outline-warning rounded-pill px-4">Send Request <i className="fa fa-paper-plane ms-2"></i></button>
                             </form>
                         </div>
                     </div>

@@ -158,7 +158,7 @@ app.post('/foodrequests', async (req, res)=>{
 
         const created = await sendFoodReq.save();
         console.log(created);
-        res.status(200).send("Donation Request Sent");
+        res.status(200).send("Food Request Sent");
         
     } catch(error){
         res.status(400).send(error)
@@ -183,7 +183,7 @@ app.post('/industryp', async (req, res)=>{
 
         const created = await sendIndustryP.save();
         console.log(created);
-        res.status(200).send("Donation Request Sent");
+        res.status(200).send("Industry Purchase Request Sent");
         
     } catch(error){
         res.status(400).send(error)
