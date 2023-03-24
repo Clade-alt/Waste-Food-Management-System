@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom'
 
 const Roles = () => {
     return (
@@ -13,41 +14,41 @@ const Roles = () => {
                                 <hr className="w-50 mx-auto" />
                                 <div className="card text-center my-5">
                                     <div className="card-header">
-                                        Featured
+                                        &nbsp;
                                     </div>
                                     <div className="card-body">
                                         <h5 className="card-title">Special title treatment</h5>
                                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                                        <NavLink to="/foodds" className="btn btn-outline-warning rounded-pill pb-2 w-25">Go</NavLink>
                                     </div>
                                     <div className="card-footer text-muted">
-                                        2 days ago
+                                        &nbsp;
                                     </div>
                                 </div>
                                 <div className="card text-center my-5">
                                     <div className="card-header">
-                                        Featured
+                                        &nbsp;
                                     </div>
                                     <div className="card-body">
                                         <h5 className="card-title">Special title treatment</h5>
                                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                                        <NavLink to="/foodrequests" className="btn btn-outline-warning rounded-pill pb-2 w-25">Go</NavLink>
                                     </div>
                                     <div className="card-footer text-muted">
-                                        2 days ago
+                                        &nbsp;
                                     </div>
                                 </div>
                                 <div className="card text-center my-5">
                                     <div className="card-header">
-                                        Featured
+                                        &nbsp;
                                     </div>
                                     <div className="card-body">
                                         <h5 className="card-title">Special title treatment</h5>
                                         <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                                        <a href="#" className="btn btn-primary">Go somewhere</a>
+                                        <NavLink to="/industryp" className="btn btn-outline-warning rounded-pill pb-2 w-25">Go</NavLink>
                                     </div>
                                     <div className="card-footer text-muted">
-                                        2 days ago
+                                        &nbsp;
                                     </div>
                                 </div>
                             </div>
