@@ -16,6 +16,7 @@ import { useEffect } from 'react';
 import FoodDS from './components/FoodDS';
 import FoodRequests from './components/FoodRequests';
 import IndustryP from './components/IndustryP';
+import Dashboard from './components/Dashboard';
 
 function App() {
 
@@ -69,6 +70,7 @@ function App() {
           <Route exact path="/foodds" element={<FoodDS />} auth={auth} />
           <Route exact path="/foodrequests" element={<FoodRequests />} auth={auth} />
           <Route exact path="/industryp" element={<IndustryP />} auth={auth} />
+          <Route exact path="/dashboard" element={<Dashboard/>} auth={auth} />
         </Route>
       </Routes>
       <Footer />
