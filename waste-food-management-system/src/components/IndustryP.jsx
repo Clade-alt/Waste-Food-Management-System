@@ -59,7 +59,7 @@ const IndustryP = () => {
                     <div className="row mb-5">
                         <div className="col-12">
                             <h1 className="display-6 text-center mb-4">Industrial Purchase</h1>
-                            <h3 className="fs-5 text-center mb-0">ABC</h3>
+                            <h3 className="fs-5 text-center mb-0">Co-operate with us to make a better future</h3>
                             <hr className="w-25 mx-auto" />
                         </div>
                     </div>

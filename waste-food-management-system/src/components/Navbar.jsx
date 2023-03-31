@@ -36,7 +36,7 @@ const Navbar = (props) => {
               :
               <>
                 <NavLink to="/dashboard" className="btn btn-outline-secondary ms-2 px-4 rounded-pill">
-                  <i className="fa fa-sign-out me-2"></i>Dashboard</NavLink>
+                  <i className="fa fa-line-chart me-2"></i>Dashboard</NavLink>
                 <NavLink to="/roles" className="btn btn-outline-secondary ms-2 px-4 rounded-pill">
                   <i className="fa fa-users me-2"></i>Roles</NavLink>
                 <NavLink to="/logout" className="btn btn-outline-secondary ms-2 px-4 rounded-pill">

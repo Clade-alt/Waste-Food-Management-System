@@ -17,8 +17,8 @@ const Roles = () => {
                                         &nbsp;
                                     </div>
                                     <div className="card-body">
-                                        <h5 className="card-title">Special title treatment</h5>
-                                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <h5 className="card-title">Food Donating Or Selling</h5>
+                                        <p className="card-text">Donate or sell us waste food or excess food, according to your preference.</p>
                                         <NavLink to="/foodds" className="btn btn-outline-warning rounded-pill pb-2 w-25">Go</NavLink>
                                     </div>
                                     <div className="card-footer text-muted">
@@ -30,8 +30,8 @@ const Roles = () => {
                                         &nbsp;
                                     </div>
                                     <div className="card-body">
-                                        <h5 className="card-title">Special title treatment</h5>
-                                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <h5 className="card-title">Food Requesting</h5>
+                                        <p className="card-text">Request food from us according to the quality to orphanges, shelters etc.</p>
                                         <NavLink to="/foodrequests" className="btn btn-outline-warning rounded-pill pb-2 w-25">Go</NavLink>
                                     </div>
                                     <div className="card-footer text-muted">
@@ -43,8 +43,8 @@ const Roles = () => {
                                         &nbsp;
                                     </div>
                                     <div className="card-body">
-                                        <h5 className="card-title">Special title treatment</h5>
-                                        <p className="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                                        <h5 className="card-title">Industrial Purchase</h5>
+                                        <p className="card-text">Purchase food from us to a industry for industrial products and purposes.</p>
                                         <NavLink to="/industryp" className="btn btn-outline-warning rounded-pill pb-2 w-25">Go</NavLink>
                                     </div>
                                     <div className="card-footer text-muted">
