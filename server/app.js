@@ -14,6 +14,7 @@ const port = process.env.PORT;
 
 // Require Model
 const Users = require('./models/userSchema');
+const Admins = require('./models/adminSchema');
 const Message = require('./models/msgSchema');
 const Donation = require('./models/donationSchema');
 const FoodReq = require('./models/foodreqSchema');
@@ -74,6 +75,67 @@ app.post('/login', async (req, res)=>{
             if(isMatch){
                 // Generate Token which is defined in user schema
                 const token = await user.generateToken();
+                res.cookie("jwt", token, {
+                    // Expires Token in 24 hours
+                    expires : new Date(Date.now() + 86400000),
+                    httpOnly : true
+                })
+                res.status(200).send("Login Successful")
+            }else{
+                res.status(400).send("Invalid Credentials");
+            }
+        }else{
+            res.status(400).send("Invalid Credentials");
+        }
+
+    } catch(error){
+        res.status(400).send(error);
+    }
+})
+
+// Admin Signup
+app.post('/adminsignup', async (req, res)=>{
+    try{
+        //Get body or data
+        const fullname = req.body.fullname;
+        const email = req.body.email;
+        const password = req.body.password;
+        const address = req.body.address;
+        const contactnum = req.body.contactnum;
+
+        const createAdmin = new Admins({
+            fullname : fullname,
+            email : email,
+            password : password,
+            address : address,
+            contactnum : contactnum
+        });
+
+        const created = await createAdmin.save();
+        console.log(created);
+        res.status(200).send("Sign Up Complete");
+        
+    } catch(error){
+        res.status(400).send(error)
+    }
+})
+
+
+// Admin Login
+app.post('/adminlogin', async (req, res)=>{
+    try{
+        const email = req.body.email;
+        const password = req.body.password;
+
+        // Find admin if exist
+        const admin = await Admins.findOne({email : email});
+        if(admin){
+            // Verify Password
+            const isMatch = await bcryptjs.compare(password, admin.password);
+
+            if(isMatch){
+                // Generate Token which is defined in admin schema
+                const token = await admin.generateToken();
                 res.cookie("jwt", token, {
                     // Expires Token in 24 hours
                     expires : new Date(Date.now() + 86400000),
