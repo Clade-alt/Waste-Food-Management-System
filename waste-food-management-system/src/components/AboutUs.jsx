@@ -1,4 +1,5 @@
 import React from 'react'
+import { NavLink } from 'react-router-dom';
 
 const AboutUs = () => {
     return (
@@ -15,8 +16,8 @@ const AboutUs = () => {
                             <h1 className="display-6 mb-2">Who <b>We</b> Are</h1>
                             <hr className="w-50" />
                             <p className="lead mb-4">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam rerum id omnis ad dolores vitae minus voluptates soluta ipsum, aspernatur magni nobis unde cupiditate, repudiandae exercitationem amet culpa? A iste, id aliquam odio maxime aspernatur officia laborum ducimus deserunt maiores voluptates. Aspernatur itaque aliquam similique soluta praesentium, quaerat consectetur unde.</p>
-                            <button className="btn btn-warning rounded-pill px-4 py-2">Get Started</button>
-                            <button className="btn btn-outline-warning rounded-pill px-4 py-2 ms-2">Contact Us</button>
+                            <NavLink to="/service" className="btn btn-warning rounded-pill px-4 py-2">Get Started</NavLink>
+                            <NavLink to="/contactus" className="btn btn-outline-warning rounded-pill px-4 py-2 ms-2">Contact Us</NavLink>
 
                         </div>
                     </div>
