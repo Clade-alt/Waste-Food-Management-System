@@ -6,7 +6,7 @@ const AdminLogin = () => {
 
     const navigate = useNavigate();
 
-    const [user, setUser] =useState({
+    const [admin, setAdmin] =useState({
         email : '',
         password : ''
     });
@@ -16,15 +16,15 @@ const AdminLogin = () => {
         let name = event.target.name
         let value = event.target.value
 
-        setUser({...user, [name]:value})
+        setAdmin({...admin, [name]:value})
     }
 
     // Handle Login
     const handleSubmit = async (event)=>{
         event.preventDefault();
-        const {email,password} = user;
+        const {email,password} = admin;
         try{
-            const res = await fetch('/login', {
+            const res = await fetch('/Adminlogin', {
                 method : "POST",
                 headers : {
                     "Content-Type" : "application/json"
@@ -55,19 +55,19 @@ const AdminLogin = () => {
                         <h1 className="display-4 fw-bolder">Welcome Back</h1>
                         <p className="lead text-center">Enter Your Credentials To Login</p>
                         <h5 className="mb-4">OR</h5>
-                        <NavLink to="/signup" className="btn btn-outline-light rounded-pill pb-2 w-50">Sign Up</NavLink>
+                        <NavLink to="/adminsignup" className="btn btn-outline-light rounded-pill pb-2 w-50">Sign Up</NavLink>
                     </div>
                     <div className="col-md-6 p-5">
                         <h4 className="display-6 mb-5 text-center">Please Login Below To Explore All Our Services</h4>
                         <form onSubmit={handleSubmit}>
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email address</label>
-                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" value={user.email} onChange={handleChange}/>
+                                <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email" value={admin.email} onChange={handleChange}/>
                                 <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
                             </div>
                             <div class="mb-3">
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" class="form-control" id="password" name="password" value={user.password} onChange={handleChange}/>
+                                <input type="password" class="form-control" id="password" name="password" value={admin.password} onChange={handleChange}/>
                             </div>
                             <div class="mb-3 form-check">
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1" />
