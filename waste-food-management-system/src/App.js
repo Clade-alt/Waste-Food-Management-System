@@ -19,6 +19,7 @@ import IndustryP from './components/IndustryP';
 import Dashboard from './components/Dashboard';
 import AdminLogin from './components/AdminLogin';
 import AdminSignup from './components/AdminSignup';
+import Feedback from './components/Feedback';
 
 function App() {
 
@@ -72,7 +73,8 @@ function App() {
           <Route exact path="/foodds" element={<FoodDS />} auth={auth} />
           <Route exact path="/foodrequests" element={<FoodRequests />} auth={auth} />
           <Route exact path="/industryp" element={<IndustryP />} auth={auth} />
-          <Route exact path="/dashboard" element={<Dashboard/>} auth={auth} />
+          <Route exact path="/dashboard" element={<Dashboard />} auth={auth} />
+          <Route exact path="/feedback" element={<Feedback />} auth={auth} />
           <Route exact path="/adminlogin" element={<AdminLogin/>} auth={auth} />
           <Route exact path="/adminsignup" element={<AdminSignup/>} auth={auth} />
         </Route>

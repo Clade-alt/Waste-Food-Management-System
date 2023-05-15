@@ -60,7 +60,7 @@ const AdminSignup = () => {
                         <h1 className="display-4 fw-bolder">Hello, There</h1>
                         <p className="lead text-center">Enter Your Details To Sign Up As An Admin</p>
                         <h5 className="mb-4">OR</h5>
-                        <NavLink to="/adminlogin" className="btn btn-outline-light rounded-pill pb-2 w-50">Login</NavLink>
+                        <NavLink to="/adminlogin" className="btn btn-outline-light rounded-pill pb-2 w-50">Login as Admin</NavLink>
                     </div>
                     <div className="col-md-6 p-5">
                         <h4 className="mb-5 text-center">Create an account to manage the website as an admin</h4>

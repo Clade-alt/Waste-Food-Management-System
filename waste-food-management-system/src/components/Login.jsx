@@ -55,7 +55,9 @@ const Login = () => {
                         <h1 className="display-4 fw-bolder">Welcome Back</h1>
                         <p className="lead text-center">Enter Your Credentials To Login</p>
                         <h5 className="mb-4">OR</h5>
-                        <NavLink to="/signup" className="btn btn-outline-light rounded-pill pb-2 w-50">Sign Up</NavLink>
+                        <NavLink to="/signup" className="btn btn-outline-light rounded-pill pb-2 w-50">Sign Up</NavLink>&nbsp;
+                        <h5 className="mb-4">OR</h5>
+                        <NavLink to="/adminlogin" className="btn btn-outline-light rounded-pill pb-2 w-50">Login as an Admin</NavLink>
                     </div>
                     <div className="col-md-6 p-5">
                         <h4 className="display-6 mb-5 text-center">Please Login Below To Explore All Our Services</h4>

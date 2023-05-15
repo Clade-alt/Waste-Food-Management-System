@@ -4,6 +4,7 @@ const express = require('express');
 const bcryptjs = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
+const api = require('./routes/api');
 
 const app = express();
 
@@ -264,6 +265,31 @@ app.get('/logout', (req, res)=>{
 app.get('/auth', authenticate, (req, res)=>{
 
 })
+
+// Api routes
+app.use('/api', api);
+
+// Route to retrieve dashboard data
+app.get('/api', async (req, res) => {
+    try {
+      // Retrieve the data from the database
+      const donations = await donationSchema.find();
+      const foodRequests = await foodreqSchema.find();
+      const industryPurchases = await industrypSchema.find();
+  
+      // Combine the data into a single object
+      const data = {
+        donations,
+        foodRequests,
+        industryPurchases,
+      };
+  
+      res.json(data);
+    } catch (error) {
+      console.error(error);
+      res.status(500).json({ message: 'Server error' });
+    }
+  });
 
 // Run Server
 app.listen(port, ()=>{
