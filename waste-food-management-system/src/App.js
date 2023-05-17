@@ -72,7 +72,7 @@ function App() {
         <ProtectedRoute exact path="/foodds" component={FoodDS} auth={auth} />
         <ProtectedRoute exact path="/foodrequests" component={FoodRequests} auth={auth} />
         <ProtectedRoute exact path="/industryp" component={IndustryP} auth={auth} />
-        <Route exact path="/dashboard" component={Dashboard} />
+        <ProtectedRoute exact path="/dashboard" component={Dashboard} auth={auth}/>
         <ProtectedRoute exact path="/feedback" component={Feedback} auth={auth} />
         <ProtectedRoute exact path="/adminlogin" component={AdminLogin} auth={auth1} />
         <ProtectedRoute exact path="/adminsignup" component={AdminSignup} auth={auth1} />

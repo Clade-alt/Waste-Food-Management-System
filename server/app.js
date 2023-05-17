@@ -270,7 +270,7 @@ app.get('/auth', authenticate, (req, res)=>{
 app.use('/api', api);
 
 // Route to retrieve dashboard data
-app.get('/api', async (req, res) => {
+app.get('/dashboard', async (req, res) => {
     try {
       // Retrieve the data from the database
       const donations = await donationSchema.find();
