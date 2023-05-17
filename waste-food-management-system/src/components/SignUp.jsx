@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 const SignUp = () => {
 
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const [user, setuser] = useState({
         fullname : "",
@@ -45,7 +45,7 @@ const SignUp = () => {
                 window.alert("Details Already Used Or The Fields Are Empty")
             }else{
                 window.alert("Sign Up Complete");
-                navigate('/login');
+                history.push('/login');
             }
         } catch(error){
             console.log(error);

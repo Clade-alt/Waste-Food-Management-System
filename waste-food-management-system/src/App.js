@@ -6,7 +6,7 @@ import Navbar from './components/Navbar';
 import Services from './components/Services';
 import ContactUs from './components/ContactUs';
 import Footer from './components/Footer';
-import { Routes, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Roles from './components/Roles';
@@ -60,25 +60,23 @@ function App() {
   return (
     <>
       <Navbar auth={auth1} />
-      <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/aboutus" element={<AboutUs />} />
-        <Route exact path="/service" element={<Services />} />
-        <Route exact path="/contactus" element={<ContactUs />} />
-        <Route exact path='/' element={<ProtectedRoute />}>
-          <Route exact path="/login" element={<Login />} auth={auth1} />
-          <Route exact path="/signup" element={<SignUp />} auth={auth1} />
-          <Route exact path="/roles" element={<Roles />} auth={auth} />
-          <Route exact path="/logout" element={<Logout />} auth={auth} />
-          <Route exact path="/foodds" element={<FoodDS />} auth={auth} />
-          <Route exact path="/foodrequests" element={<FoodRequests />} auth={auth} />
-          <Route exact path="/industryp" element={<IndustryP />} auth={auth} />
-          <Route exact path="/dashboard" element={<Dashboard />} auth={auth} />
-          <Route exact path="/feedback" element={<Feedback />} auth={auth} />
-          <Route exact path="/adminlogin" element={<AdminLogin/>} auth={auth} />
-          <Route exact path="/adminsignup" element={<AdminSignup/>} auth={auth} />
-        </Route>
-      </Routes>
+      <Switch>
+        <Route exact path="/" component={Home} />
+        <Route exact path="/aboutus" component={AboutUs} />
+        <Route exact path="/service" component={Services} />
+        <Route exact path="/contactus" component={ContactUs} />
+        <ProtectedRoute exact path="/login" component={Login} auth={auth1} />
+        <ProtectedRoute exact path="/signup" component={SignUp} auth={auth1} />
+        <ProtectedRoute exact path="/roles" component={Roles} auth={auth} />
+        <ProtectedRoute exact path="/logout" component={Logout} auth={auth} />
+        <ProtectedRoute exact path="/foodds" component={FoodDS} auth={auth} />
+        <ProtectedRoute exact path="/foodrequests" component={FoodRequests} auth={auth} />
+        <ProtectedRoute exact path="/industryp" component={IndustryP} auth={auth} />
+        <Route exact path="/dashboard" component={Dashboard} />
+        <ProtectedRoute exact path="/feedback" component={Feedback} auth={auth} />
+        <ProtectedRoute exact path="/adminlogin" component={AdminLogin} auth={auth1} />
+        <ProtectedRoute exact path="/adminsignup" component={AdminSignup} auth={auth1} />
+      </Switch>
       <Footer />
     </>
   );

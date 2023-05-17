@@ -39,8 +39,11 @@ const Navbar = (props) => {
                   <i className="fa fa-line-chart me-2"></i>Dashboard</NavLink>
                 <NavLink to="/roles" className="btn btn-outline-secondary ms-2 px-4 rounded-pill">
                   <i className="fa fa-users me-2"></i>Roles</NavLink>
+                <NavLink to="/feedback" className="btn btn-outline-secondary ms-2 px-4 rounded-pill">
+                  <i className="fa fa-comments me-2"></i>feedback</NavLink>
                 <NavLink to="/logout" className="btn btn-outline-secondary ms-2 px-4 rounded-pill">
                   <i className="fa fa-sign-out me-2"></i>Logout</NavLink>
+
               </>
             }
           </div>

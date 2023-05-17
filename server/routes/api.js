@@ -16,32 +16,18 @@ router.get('/messages', async (req, res) => {
   }
 });
 
-router.get('/donations', async (req, res) => {
+router.get('/data', async (req, res) => {
   try {
-    const donations = await donationSchema.find();
-    res.json(donations);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Server error' });
-  }
-});
+    // Retrieve the data from the database or any other source
+    const data = [
+      { label: 'Label 1', donations: 10 },
+      { label: 'Label 2', donations: 20 },
+      // Add more data objects as needed
+    ];
 
-router.get('/food-requests', async (req, res) => {
-  try {
-    const foodRequests = await foodreqSchema.find();
-    res.json(foodRequests);
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: 'Server error' });
-  }
-});
-
-router.get('/industry-purchases', async (req, res) => {
-  try {
-    const industryPurchases = await industrypSchema.find();
-    res.json(industryPurchases);
-  } catch (err) {
-    console.error(err);
+    res.json(data);
+  } catch (error) {
+    console.error(error);
     res.status(500).json({ message: 'Server error' });
   }
 });

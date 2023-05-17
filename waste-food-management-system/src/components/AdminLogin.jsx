@@ -1,10 +1,10 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 
 const AdminLogin = () => {
 
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const [admin, setAdmin] =useState({
         email : '',
@@ -38,7 +38,7 @@ const AdminLogin = () => {
                 window.alert("Invalid Credentials")
             }else{
                 window.alert("Login Successful")
-                navigate('/');
+                history.push('/');
                 window.location.reload();
                 
             }

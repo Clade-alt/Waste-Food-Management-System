@@ -1,10 +1,10 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { useEffect } from 'react'
 
 const Logout = () => {
 
-    const navigate = useNavigate();
+    const history = useHistory();
 
     const logout = async() => {
         try {
@@ -20,7 +20,7 @@ const Logout = () => {
             if(res.status === 401 || !res ){
                 window.alert("Please Logout Later");
             }else{
-                navigate('/');
+                history.push('/');
                 window.location.reload()
             }
         } catch (error) {
