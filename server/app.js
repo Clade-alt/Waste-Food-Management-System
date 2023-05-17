@@ -179,7 +179,7 @@ app.post('/message', async (req, res)=>{
 })
 
 
-// Food Donator
+// Food Donations
 app.post('/donations', async (req, res)=>{
     try{
         //Get body or data
